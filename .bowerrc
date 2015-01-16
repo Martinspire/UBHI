@@ -1,3 +1,4 @@
 {
-    "directory": "frontend/vendor"
+    "directory": "frontend/vendor",
+    "interactive": false
 }

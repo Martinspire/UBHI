@@ -21,19 +21,6 @@ call sudo npm cache clean
 @echo:
 @echo Cleaning done!
 @echo:
-@echo Going to install latest stable node
-@echo:
-call npm install -g n
-call n stable
-@echo:
-@echo Node done!
-@echo:
-@echo Going to install latest stable npm
-@echo:
-call npm install -g npm
-@echo:
-@echo NPM done!
-@echo:
 @echo Installing Grunt
 @echo:
 call npm install -g grunt-cli
@@ -67,7 +54,7 @@ call npm install
 @echo:
 @echo Cleaning Frontend dependancies
 @echo:
-call bower clean cache
+call bower cache clean
 @echo:
 @echo Done!
 @echo:
