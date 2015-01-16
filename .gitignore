@@ -1,12 +1,4 @@
 .sass-cache/
-backend/tmp/
-frontend/css/
-frontend/vendor/
-node_modules/
-dist/
-cache/
-report/
-trash/
 version.json
 npm-debug.log
 *.DS_Store
