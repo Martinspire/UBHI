@@ -29,19 +29,26 @@ module.exports = {
       outputStyle: 'compressed',
       sourceMap: false
     },
-    cwd: 'frontend/sass/',
-    src: ['*.scss'],
-    dest: 'dist/css/',
-    ext: '.css'
+    files: [{
+      expand: true,
+      cwd: 'frontend/sass/',
+      src: ['**/*.scss'],
+      dest: 'dist/css/',
+      ext: '.css'
+    }]
+    
   },
   dev: {
     options: {
-      outputStyle: 'expanded',
+      outputStyle: 'nested',
       sourceMap: true
     },
-    cwd: 'frontend/sass/',
-    src: ['*.scss'],
-    dest: 'frontend/css/',
-    ext: '.css'
+    files: [{
+      expand: true,
+      cwd: 'frontend/sass/',
+      src: ['*.scss'],
+      dest: 'frontend/css/',
+      ext: '.css'
+    }]
   }
 };

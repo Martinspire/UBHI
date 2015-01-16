@@ -17,7 +17,7 @@
 pause
 @echo Cleaning cache
 @echo:
-call sudo npm cache clean
+call npm cache clean
 @echo:
 @echo Cleaning done!
 @echo:

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="jqueryMobile/jquery.mobile-1.4.5.min.css" />
+	<script src="jqueryMobile/jquery-1.11.1.min.js"></script>
+	<script src="jqueryMobile/jquery.mobile-1.4.5.min.js"></script>
+	<script src="jqueryChart/Chart.min.js"></script>
+	<script src="jsCustom/customCharts.js"></script>
+</head>
+<body>
+
+	<div data-role="page" id="pageone">
+		<div data-role="header">
+			<h1>Usage-based Health Insurance</h1>
+		</div>
+		
+		<div data-role="main" class="ui-content">
+			<form method="post" action="home.html" data-ajax="false">
+				<label for="name">Name : <span>*</span></label>
+				<input type="text" name="name" id="name" placeholder="Name" />
+				<label for="email">Email: <span>*</span></label>
+				<input type="email" id="email" name="email" placeholder="Email"/>
+				<input type="submit" data-inline="true" value="Login" data-theme="b" />
+			</form>
+			
+				<!--
+					<a href="pagina1.html" data-transition="fade" class="ui-btn">Pagina 1</a>
+					<a href="pagina2.html" data-transition="fade" class="ui-btn">Pagina 2</a>
+				-->
+				
+		</div>
+
+		<div data-role="footer">
+			<h1>Delta Lloyd Hackaton - 2015</h1>
+		</div>
+	</div>
+
+</body>
+</html>
