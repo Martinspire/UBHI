@@ -1,0 +1,86 @@
+body>.pagewrapper {
+    z-index:99;
+    @include flexbox;
+    @include flex-direction(column);
+    @include flex(1);
+    width:100%;
+    margin:0 auto;
+    padding:0;
+    background-color:$base-background;
+    position:relative;
+}
+body>.pagewrapper>.page{
+    @include flex-direction(column);
+}
+.flex{
+    @include flexbox;
+    @include flex-direction(column);
+    @include flex(1);
+}
+.flexrow{
+    @include flexbox;
+    @include flex-direction(row);
+    @include flex(1);
+}
+.flexrow>div{
+    @include flexbox;
+    @include flex-direction(column);
+    margin:0 15px;
+    position:relative;
+}
+.flexrow>div:first-child{
+    margin-left:0;
+}
+.flexrow>div:last-child{
+    margin-right:0;
+}
+@for $i from 1 through 12 {
+    .col-#{$i}
+    {
+        @include flex(($i / 12) * 10);
+        width:0;
+    }
+}
+.flexrow>.col-max{
+    @include flexbox;
+    @include flex-direction(column);
+    margin:0;
+    position:relative;
+    width:100%;
+}
+.flexrow>.hidden{
+    margin:0;
+    padding:0;
+    visibility: hidden;
+}
+.flexrow.defaultmargin{
+    margin:2%;
+}
+//remove column padding when row is inline to remove redundant padding
+.row.inline>div{
+    padding-left:0;
+}
+.row.inline>div:last-child{
+    padding-right:0;
+}
+.row.nopadding>div{
+    padding:0;
+}
+.row>.center{
+    @include align-items(center);
+    @include align-content(center);
+}
+.row>.right{
+    text-align:right;
+}
+
+@media only screen and (min-width:$desktop) {
+    body>.pagewrapper>.page{
+        @include flex-direction(row);
+    }
+    .page>.mediaplayer{
+        @include flex(1);
+        @include flex-shrink(1);
+        @include flex-grow(1);
+    }
+}

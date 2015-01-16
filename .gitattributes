@@ -1,0 +1,30 @@
+# Auto detect text files and perform LF normalization
+*        text=auto
+
+# Explicitly declare text files you want to always be normalized and converted
+# to native line endings on checkout.
+*.cs     text diff=csharp
+*.java   text diff=java
+*.html   text diff=html
+*.jade   text
+*.json   text
+*.css    text
+*.scss   text
+*.js     text
+*.sql    text
+*.map    text
+
+# Declare files that will always have CRLF line endings on checkout.
+*.csproj text merge=union
+*.sln    text merge=union eol=crlf
+
+*.docx   diff=astextplain
+*.DOCX   diff=astextplain
+
+# Denote all files that are truly binary and should not be modified.
+*.png binary
+*.jpg binary
+*.gif binary
+*.mp4 binary
+*.avi binary
+*.zip binary

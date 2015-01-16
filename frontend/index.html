@@ -1,0 +1,44 @@
+<!doctype html>
+<html ng-app="Framework">
+
+<head>
+    <title>Framework</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1,maximum-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- StyleSheets -->
+    <link rel="stylesheet" type="text/css" href="vendor/normalize-css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+</head>
+
+<body class="ng-cloak" ng-controller="appController" ontouchstart="">
+    <div class="pagewrapper" ng-view></div>
+    <!-- AngularJS -->
+    <script type="text/javascript" src="vendor/angular/angular.js"></script>
+    <script type="text/javascript" src="vendor/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="vendor/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="vendor/angular-resource/angular-resource.min.js"></script>
+    <script type="text/javascript" src="vendor/angular-sanitize/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="vendor/angular-touch/angular-touch.min.js"></script>
+    <script type="text/javascript" src="vendor/ngstorage/ngStorage.min.js"></script>
+    <script type="text/javascript" type="text/javascript" src="vendor/angular-toastr/dist/angular-toastr.min.js"></script>
+    <!-- Custom JS -->
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="appController.js"></script>
+    <script type="text/javascript" src="home/homeController.js"></script>
+    <!-- livereload script -->
+    <script type="text/javascript">
+        //take care of livereload by inserting livereload script. Not using document.write because this is better javascript
+        var s = document.createElement("script");
+        var host = (location.host || "localhost").split(":");
+        var port = (host[1] || "80");
+        s.type = "text/javascript";
+        s.src = "http://"+ host[0] + ":" + '8080' +"/livereload.js?snipver=1";
+        document.getElementsByTagName('body')[0].appendChild(s);
+    </script>
+</body>
+
+</html>

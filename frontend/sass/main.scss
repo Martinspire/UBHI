@@ -1,0 +1,23 @@
+// Base styles
+@import 'variables';
+@import 'base';
+@import 'font';
+
+// Vendor
+@import '../vendor/angular-toastr/dist/angular-toastr.css';
+
+// Global styles
+@import 'structure';
+@import 'header';
+@import 'menu';
+@import 'footer';
+@import 'forms';
+
+// Page specific styles
+@import '../home/home';
+
+// Directive styles
+@import 'popup';
+
+//Fixes for IE 11 and below
+@import 'ie-fix';
