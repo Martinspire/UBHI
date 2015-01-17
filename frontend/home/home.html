@@ -1,7 +1,12 @@
-<div class="homepage">
-	<h1>Homepage</h1>
-	<p>This is the homepage of the Framework</p>
-	<p>Some boolean is {{home.someBoolean}} and we have a value of <span ng-bind="home.someFunction();"></span></p>
-    <p><a class="button" href="#/details">Details</a></p>
-    <p><a class="button" href="#/">Uitloggen</a></p>
+<div ng-include src="'/_header.html'"></div>
+<div class="row">
+    <div class="small-12 columns">
+        <div class="page homepage">
+        	<h1>Home</h1>
+        	<p>This is the homepage of the Framework</p>
+        	<p>Some boolean is {{home.someBoolean}} and we have a value of <span ng-bind="home.someFunction();"></span></p>
+            <!-- <p><a class="button" href="#/details">Details</a></p>
+            <p><a class="button" href="#/">Uitloggen</a></p> -->
+        </div>
+    </div>
 </div>
