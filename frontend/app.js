@@ -26,6 +26,12 @@ angular.module('Framework')
 					controller: 'homeController',
 					controllerAs: 'home'
 				})
+				.when('/home/:state',
+				{
+					templateUrl: 'home/home.html',
+					controller: 'homeController',
+					controllerAs: 'home'
+				})
 				.when('/register',
 				{
 					templateUrl: 'register/register.html',

@@ -27,6 +27,7 @@ body {
     @media screen and (max-width: $mobile) {
         font-size:12px;
     }
+    overflow-y:scroll;
 }
 
 form {

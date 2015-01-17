@@ -8,17 +8,17 @@
                 <canvas id="pie" class="chart chart-pie besparing" data="home.besparingData" labels="home.besparingLabels" colours="home.besparingKleuren" options="home.besparingOpties" height="250"></canvas>
 
                 <div class="besparing-header">Besparing:</div>
-                <div class="besparing-waarde">&euro; 15,-</div>
+                <div class="besparing-waarde">&euro; {{home.huidigeBesparing}}</div>
             </div>
 
             <div class="besparing-details">
                 <h2>Details:</h2>
-                <p>Huidige maandbedrag: &euro; 104,63</p>
+                <p>Huidige maandbedrag: &euro; {{home.huidigMaandbedrag}}</p>
                 <p>Nog 7 dagen te gaan voor maximale besparing</p>
             </div>
             <div class="transactie-details">
-                <h2>Transacties:</h2>
-                <p>3 transacties ter waarde van: &euro; 104,63</p>
+                <h2 ng-click="home.refresh()">Transacties:</h2>
+                <p>{{home.purchases.length}} transactie<span ng-if="home.purchases.length !== 1">s</span> ter waarde van: &euro; {{home.transactiesTotaal}}</p>
                 <p>Nog 7 dagen te gaan voor maximale besparing</p>
             </div>
 
