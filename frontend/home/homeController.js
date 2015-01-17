@@ -11,6 +11,16 @@ angular.module('Framework')
 				return 5;
 			};
 
+			vm.purchases = [
+			{
+				"date": "1 / 1 / 2015",
+				"items": [
+				{
+					"name": "Appels 1kg",
+					"index": 80
+				}]
+			}]
+
 			// toastr.info('Welcome to the framework\nYou can show errors here if you want.', 'Hi there',
 			// {
 			// 	closeButton: true
