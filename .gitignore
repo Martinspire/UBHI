@@ -2,3 +2,4 @@
 version.json
 npm-debug.log
 *.DS_Store
+.project
