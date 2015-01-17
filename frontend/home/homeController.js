@@ -114,6 +114,14 @@ angular.module('Framework')
 						"index": 60
 					}]
 				});
+
+				setTimeout(function ()
+				{
+					toastr.info('Zojuist heeft er een transactie plaatsgevonden. Het overzicht wordt bijgewerkt.', 'Nieuwe transactie',
+					{
+						closeButton: true
+					});
+				}, 300);
 			}
 			else
 			{
