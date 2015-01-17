@@ -11,9 +11,9 @@ angular.module('Framework')
 				return 5;
 			};
 
-			toastr.info('Welcome to the framework\nYou can show errors here if you want.', 'Hi there',
-			{
-				closeButton: true
-			});
+			// toastr.info('Welcome to the framework\nYou can show errors here if you want.', 'Hi there',
+			// {
+			// 	closeButton: true
+			// });
 		}
 	]);
