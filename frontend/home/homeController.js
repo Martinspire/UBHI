@@ -183,9 +183,9 @@ angular.module('Framework')
 				.toFixed(2);
 
 
-
-
-			vm.besparingData = [63.25, 26.75];
+			vm.korting = (parseFloat(vm.transactiesTotaal) * kortingsEenheid);
+			vm.totaal = 100 - vm.korting;
+			vm.besparingData = [vm.korting, vm.totaal];
 
 
 			// toastr.info('Welcome to the framework\nYou can show errors here if you want.', 'Hi there',
