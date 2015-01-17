@@ -3,8 +3,12 @@ angular.module('Framework', [
 	'ngSanitize',
 	'ngResource',
 	'ngStorage',
-	'toastr'
+	'toastr',
+	'chart.js'
 ]);
+
+
+
 angular.module('Framework')
 	.config(['$routeProvider', '$locationProvider',
 		function ($routeProvider, $locationProvider)

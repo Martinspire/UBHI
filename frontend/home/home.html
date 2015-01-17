@@ -1,61 +1,56 @@
 <div ng-include src="'/_header.html'"></div>
 <div class="row">
-	<div class="small-12 columns">
-		<div class="page homepage">
-			<h1>Home</h1>
-			<p>This is the homepage of the Framework</p>
-			<p>
-				Some boolean is {{home.someBoolean}} and we have a value of <span
-					ng-bind="home.someFunction();"></span>
-			</p>
-			<!-- <p><a class="button" href="#/details">Details</a></p>
+    <div class="small-12 columns">
+        <div class="page homepage">
+        	<!-- <h1>Huidige besparing</h1> -->
+
+            <div class="besparing-grafiek">
+                <canvas id="pie" class="chart chart-pie besparing" data="home.besparingData" labels="home.besparingLabels" colours="home.besparingKleuren" options="home.besparingOpties" height="250"></canvas>
+
+                <div class="besparing-header">Besparing:</div>
+                <div class="besparing-waarde">&euro; 15,-</div>
+            </div>
+
+            <div class="besparing-details">
+                <h2>Details:</h2>
+                <p>Huidige maandbedrag: &euro; 104,63</p>
+                <p>Nog 7 dagen te gaan voor maximale besparing</p>
+            </div>
+            <div class="transactie-details">
+                <h2>Transacties:</h2>
+                <p>3 transacties ter waarde van: &euro; 104,63</p>
+                <p>Nog 7 dagen te gaan voor maximale besparing</p>
+            </div>
+
+            <!--
+        	<p>This is the homepage of the Framework</p>
+        	<p>Some boolean is {{home.someBoolean}} and we have a value of <span ng-bind="home.someFunction();"></span></p> -->
+            <!-- <p><a class="button" href="#/details">Details</a></p>
             <p><a class="button" href="#/">Uitloggen</a></p> -->
 
 			<dl class="accordion" data-accordion>
-				<dd class="accordion-navigation">
-					<a href="#panel1b">Accordion 1</a>
-					<div id="panel1b" class="content active">Panel 1. Lorem ipsum
-						dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-						minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-						aliquip ex ea commodo consequat.</div>
-				</dd>
-				<dd class="accordion-navigation">
-					<a href="#panel2b">Accordion 2</a>
-					<div id="panel2b" class="content">Panel 2. Lorem ipsum dolor
-						sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-						incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-						veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-						ex ea commodo consequat.</div>
-				</dd>
-				<dd class="accordion-navigation">
-					<a href="#panel3b">Accordion 3</a>
-					<div id="panel3b" class="content">Panel 3. Lorem ipsum dolor
-						sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-						incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-						veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-						ex ea commodo consequat.</div>
+				<dd class="accordion-navigation" data-ng-repeat="purchase in home.purchases" data-ng-init="showPanel = false">
+					<a data-ng-click="showPanel = !showPanel">{{purchase.date}}</a>
+					<div id="panel1b" class="content" data-ng-class="{active: showPanel}">
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Table Header</th>
+                                    <th>Table Header</th>
+                                    <th>Table Header</th>
+                                    <th>Table Header</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in purchase.items">
+                                    <td>{{item.name}}</td> <td>{{item.index}}</td><td>{{item.name}}</td> <td>{{item.index}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 				</dd>
 			</dl>
-
-			<table>
-				<thead>
-					<tr>
-						<th width="200">Table Header</th>
-						<th>Table Header</th>
-						<th width="150">Table Header</th>
-						<th width="150">Table Header</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr ng-repeat="purchase in home.purchases">
-						<td>Date: {{purchase.date}}</td> Items: {{item.name}}
-					</tr>
-					</tr>
-
-
-				</tbody>
-
-				</div>
-				</div>
-				</div>
+	    </div>
+	</div>
+</div>
