@@ -4,7 +4,7 @@
       <h1><a href="#/home">UBHI</a></h1>
     </li>
      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    <li class="toggle-topbar menu-icon" data-ng-click="topbarMobile = !topbarMobile"><a><span>Menu</span></a></li>
   </ul>
 
   <section class="top-bar-section">
@@ -27,3 +27,23 @@
     </ul>
   </section>
 </nav>
+<div class="show-for-small-only">
+  <div class="mobile-menu" data-ng-class="{active: topbarMobile}">
+    <div class="row">
+      <div class="small-6 columns">
+        <ul>
+          <li><a href="#/home">Overzicht</a></li>
+          <li><a href="#/details">Jaaroverzicht</a></li>
+          <li><a href="#/tips">Tips</a></li>
+        </ul>
+      </div>
+
+      <div class="small-6 columns">
+        <ul class="right">
+          <li><a href="#/profiel">Profiel</a></li>
+          <li><a href="#/">Uitloggen</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

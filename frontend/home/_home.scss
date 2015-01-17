@@ -15,7 +15,7 @@
         }
         .besparing-waarde{
             position:absolute;
-            top:120px;
+            top:105px;
             width:100%;
             text-align:center;
             font-size:24px;
@@ -32,5 +32,17 @@
     }
     .chart.besparing{
         height:250px;
+    }
+
+    .besparing-tabel{
+        .besparing-header{
+            background:#333;
+            color:#fff;
+            margin:0;
+            padding:10px;
+        }
+        span.besparing{
+            float:right;
+        }
     }
 }

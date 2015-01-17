@@ -114,12 +114,10 @@ angular.module('Framework')
 						"index": 60
 					}]
 				});
-				vm.besparingData = [69.77, 30.23];
 			}
 			else
 			{
 
-				vm.besparingData = [63.25, 26.75];
 			}
 
 			vm.besparingLabels = ['Huidige besparing', 'Te gaan'];
@@ -147,11 +145,9 @@ angular.module('Framework')
 			}];
 
 			var maandbedrag = 145.39;
-			var marge = 15; //%
-			vm.huidigeBesparing = ((maandbedrag * (marge / 100)) * (vm.besparingData[1] / 100))
-				.toFixed(2);
-			vm.huidigMaandbedrag = ((maandbedrag * (marge / 100)) * (vm.besparingData[0] / 100))
-				.toFixed(2);
+			var marge = 15; //in %
+			var kortingsEenheid = 0.01;
+
 			vm.transactiesTotaal = (function ()
 			{
 				var totaal = 0;
@@ -165,9 +161,38 @@ angular.module('Framework')
 				return totaal.toFixed(2);
 			})();
 
+			vm.berekenBesparing = function (unit)
+			{
+				return ((maandbedrag * marge / 100) * (parseFloat(unit / 100) * kortingsEenheid))
+					.toFixed(2);
+			}
+
+			vm.berekenTransactieBesparing = function (items)
+			{
+				var totaal = 0;
+				for (var item in items)
+				{
+					totaal += items[item]['index'];
+				}
+
+				return vm.berekenBesparing(totaal);
+			}
+
+			vm.huidigeBesparing = vm.berekenBesparing(parseFloat(vm.transactiesTotaal))
+			vm.huidigMaandbedrag = (maandbedrag - vm.huidigeBesparing)
+				.toFixed(2);
+
+
+
+
+			vm.besparingData = [63.25, 26.75];
+
+
 			// toastr.info('Welcome to the framework\nYou can show errors here if you want.', 'Hi there',
 			// {
 			// 	closeButton: true
 			// });
+			//
+
 		}
 	]);

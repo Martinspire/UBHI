@@ -52,3 +52,10 @@ angular.module('Framework')
 			//$locationProvider.html5Mode(true);
 		}
 	]);
+angular.module('Framework')
+	.run(['$rootScope',
+		function ($rootScope)
+		{
+			$rootScope.topbarMobile = false;
+		}
+	]);

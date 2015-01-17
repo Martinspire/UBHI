@@ -1,25 +1,28 @@
-<div ng-include src="'/_header.html'"></div>
+<div ng-include src="'/_header.html'" class="header"></div>
 <div class="row">
     <div class="small-12 columns">
         <div class="page homepage">
         	<!-- <h1>Huidige besparing</h1> -->
+            <h2>Besparing deze maand</h2>
+            <div class="content">
+                <div class="besparing-grafiek">
+                    <canvas id="pie" class="chart chart-pie besparing" data="home.besparingData" labels="home.besparingLabels" colours="home.besparingKleuren" options="home.besparingOpties" height="250"></canvas>
 
-            <div class="besparing-grafiek">
-                <canvas id="pie" class="chart chart-pie besparing" data="home.besparingData" labels="home.besparingLabels" colours="home.besparingKleuren" options="home.besparingOpties" height="250"></canvas>
-
-                <div class="besparing-header">Besparing:</div>
-                <div class="besparing-waarde">&euro; {{home.huidigeBesparing}}</div>
+                    <div class="besparing-waarde">&euro; {{home.huidigeBesparing}}</div>
+                </div>
             </div>
 
             <div class="besparing-details">
-                <h2>Details:</h2>
+                <h2>Details</h2>
+                <div class="content">
                 <p>Huidige maandbedrag: &euro; {{home.huidigMaandbedrag}}</p>
                 <p>Nog 7 dagen te gaan voor maximale besparing</p>
+                </div>
             </div>
             <div class="transactie-details">
-                <h2 ng-click="home.refresh()">Transacties:</h2>
-                <p>{{home.purchases.length}} transactie<span ng-if="home.purchases.length !== 1">s</span> ter waarde van: &euro; {{home.transactiesTotaal}}</p>
-                <p>Nog 7 dagen te gaan voor maximale besparing</p>
+                <h2 ng-click="home.refresh()">Transacties</h2>
+                <!-- <p>{{home.purchases.length}} transactie<span ng-if="home.purchases.length !== 1">s</span> ter waarde van: &euro; {{home.transactiesTotaal}}</p>
+                <p>Nog 7 dagen te gaan voor maximale besparing</p> -->
             </div>
 
             <!--
@@ -28,27 +31,31 @@
             <!-- <p><a class="button" href="#/details">Details</a></p>
             <p><a class="button" href="#/">Uitloggen</a></p> -->
 
-			<dl class="accordion" data-accordion>
-				<dd class="accordion-navigation" data-ng-repeat="purchase in home.purchases" data-ng-init="showPanel = false">
-					<a data-ng-click="showPanel = !showPanel">{{purchase.date}}</a>
-					<div id="panel1b" class="content" data-ng-class="{active: showPanel}">
+            <div class="besparing-tabel">
+                <p class="besparing-header">Datum transactie<span class="besparing">Besparing op verzekering</span></p>
+    			<dl class="accordion" data-accordion>
+    				<dd class="accordion-navigation" data-ng-repeat="purchase in home.purchases" data-ng-init="showPanel = false">
+    					<a data-ng-click="showPanel = !showPanel">{{purchase.date}} <span class="besparing">&euro; {{home.berekenTransactieBesparing(purchase.items)}}</span></a>
+    					<div id="panel1b" class="content" data-ng-class="{active: showPanel}">
 
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Product</th>
-                                    <th>Gezondheids-index</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr ng-repeat="item in purchase.items">
-                                    <td>{{item.name}}</td> <td>{{item.index}}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-				</dd>
-			</dl>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Gezondheids-index</th>
+                                        <th>Besparing</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="item in purchase.items">
+                                        <td>{{item.name}}</td> <td>{{item.index}}</td><td>{{home.berekenBesparing(item.index)}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+    				</dd>
+    			</dl>
+            </div>
 	    </div>
 	</div>
 </div>
