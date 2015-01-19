@@ -9,7 +9,7 @@ module.exports = {
       }
     },
     files: [{
-      src: ['frontend/app.js', 'frontend/appController.js', 'frontend/**/*.js', '!frontend/vendor/**/*.js'],
+      src: ['frontend/app.js', 'frontend/appController.js', 'frontend/**/*.js','!frontend/joey/**/*.js', '!frontend/vendor/**/*.js'],
       dest: 'dist/js/app.js'
     }]
   }

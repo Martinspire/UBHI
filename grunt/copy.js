@@ -28,6 +28,16 @@ module.exports = {
     }, {
       cwd: 'frontend/',
       expand: true,
+      src: ['joey/**'],
+      dest: 'dist/'
+    }, {
+      cwd: 'backend/tmp/',
+      expand: true,
+      src: ['.gitignore'],
+      dest: 'dist/'
+    }, {
+      cwd: 'frontend/',
+      expand: true,
       src: ['index-dist.html'],
       dest: 'dist/',
       rename: function(dest,src){
